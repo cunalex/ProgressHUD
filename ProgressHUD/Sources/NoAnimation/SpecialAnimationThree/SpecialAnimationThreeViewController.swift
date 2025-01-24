@@ -220,7 +220,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
         
         lowImageIconView.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
+            make.width.equalTo(20)
         }
         
         hStack.snp.makeConstraints { make in
@@ -232,7 +232,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     func showSingleButtonAlert() {
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.title, message: model?.objectTwo?.dark_blue.subtitle, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+        let okAction = UIAlertAction(title: localizeText(forKey: .okTitle), style: .default) { [weak self] _ in
             self?.delegate?.eventsFunc(event: .specialOffer3FirstButtonTap)
             self?.showTwoButtonAlert()
         }
@@ -254,10 +254,10 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
 
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.al_title, message: alertMess, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+        let cancelAction = UIAlertAction(title: localizeText(forKey: .cancelTitle), style: .cancel) { [weak self] _ in
             self?.delegate?.eventsFunc(event: .specialOffer3SecondButtonDis)
         }
-        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+        let okAction = UIAlertAction(title: localizeText(forKey: .okTitle), style: .default) { [weak self] _ in
             self?.delegate?.eventsFunc(event: .specialOffer3ActionButton)
             if ProgressHUD.shared.isNewAnimationOn {
                 guard let gap = self?.model?.gap else { return }
@@ -265,6 +265,10 @@ public class SpecialAnimationThreeViewController: UIViewController {
                 let vc: UIViewController
                 
                 switch gap.orderIndex {
+                case 0:
+                    self?.delegate?.buttonTapped(isResult: false)
+                    return
+
                 case 1:
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 case 2:

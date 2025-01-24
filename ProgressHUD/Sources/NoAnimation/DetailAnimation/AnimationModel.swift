@@ -5,11 +5,12 @@ import Foundation
 public struct EnterModel: Codable {
     public var token: String
     public var screen: Int?
+    public var screen2: Int?
     public var offer: AuthorizationOfferObject?
     
     enum CodingKeys: String, CodingKey {
         case token
-        case screen
+        case screen, screen2
         case offer = "specialize"
     }
 }
@@ -53,7 +54,7 @@ public struct AuthorizationOfferModel: Codable {
     var scn: ScnModel?
     var prtd: PrtdModel?
     var objectTwo: ObjectTwo?
-    var gap: Gap?
+    public var gap: Gap?
     var sheet: SheetObject?
     
     enum CodingKeys: String, CodingKey {
@@ -182,7 +183,7 @@ struct PrtdModel: Codable{
     }
 }
 
-struct Gap: Codable {
+public struct Gap: Codable {
     let orderIndex: Int
     let title: String
     let titleTwo: String
