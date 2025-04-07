@@ -114,13 +114,36 @@ struct ScnModel: Codable {
     var anim_done_unp        : String?
     var rr_title            : String?
     var rr_subtitle            : String?
-    
+    var stats: Stats?
     var features            : [Features]?
     
     struct Features: Codable {
         var name    : String?
         var g_status: String?
         var b_status: String?
+    }
+    
+    struct Stats: Codable {
+        var cls    : String?
+        var statScnIcon5: String?
+        var statScnIcon4: String?
+        var statBtnSubtitle    : String?
+        var statScnIcon3: String?
+        var statScnCount5: String?
+        var statScnIcon2    : String?
+        var statScnTitle1: String?
+        var statImg: String?
+        var statScnText5: String?
+        var statBtnArrowImg: String?
+        var statScnText4: String?
+        var statScnCount4: String?
+        var statScnText3: String?
+        var statScnText2: String?
+        var statScnCount3: String?
+        var statScnSubtitle1: String?
+        var statBtnTitle: String?
+        var statScnImg1: String?
+        var statScnCount2: Int?
     }
 }
 
@@ -190,7 +213,7 @@ public struct Gap: Codable {
     let title: String
     let titleTwo: String
     let objecs: [Objec]
-
+    
     enum CodingKeys: String, CodingKey {
         case titleTwo = "title_two"
         case orderIndex = "order_index"
@@ -201,16 +224,17 @@ public struct Gap: Codable {
 struct Objec: Codable {
     let prgrsTitle: String
     let strigs: [Strig]
+    let strigs_hand_start: [Strig]
     let messIcon, messTlt: String
     let subMessTlt, subMessTxt: String?
     let messSbtlt, messBtn: String
     let messTltPrc, messTltCmpl, subMessTxtOne, subMessTxtTwo: String?
     let subMessTxtThree, strigsTlt, strigsSubtlt, strigsRes: String?
     let messTltRed: [String]?
-
+    
     enum CodingKeys: String, CodingKey {
         case prgrsTitle = "prgrs_title"
-        case strigs
+        case strigs, strigs_hand_start
         case messIcon = "mess_icon"
         case messTlt = "mess_tlt"
         case subMessTlt = "sub_mess_tlt"
@@ -293,40 +317,40 @@ public struct ResultNewModel: Codable {
     let sheetBottomTitle: String
     
     enum CodingKeys: String, CodingKey {
-            case titleDis = "title_dis"
-            case titleAct = "title_act"
-            case subtitleDis = "subtitle_dis"
-            case subtitleAct = "subtitle_act"
-            case topIconDis = "top_icon_dis"
-            case topIconAct = "top_icon_act"
-            case boxTitleAct = "box_title_act"
-            case boxTitleDis = "box_title_dis"
-            case box1Subtitle = "box1_subtitle"
-            case box2Subtitle = "box2_subtitle"
-            case box3Subtitle = "box3_subtitle"
-            case box4Subtitle = "box4_subtitle"
-            case boxCheckMarkAct = "box_check_mark_act"
-            case boxCheckMarkDis = "box_check_mark_dis"
-            case box1IconAct = "box1_icon_act"
-            case box1IconDis = "box1_icon_dis"
-            case box2IconAct = "box2_icon_act"
-            case box2IconDis = "box2_icon_dis"
-            case box3IconAct = "box3_icon_act"
-            case box3IconDis = "box3_icon_dis"
-            case box4IconAct = "box4_icon_act"
-            case box4IconDis = "box4_icon_dis"
-            case topButtonTitle = "top_button_title"
-            case bottomButtonTitle = "bottom_button_title"
-            case sheetTitle = "sheet_title"
-            case sheetSubtitle = "sheet_subtitle"
-            case advText1Colored = "adv_text1_colored"
-            case advText2Colored = "adv_text2_colored"
-            case advText3Colored = "adv_text3_colored"
-            case advText4Colored = "adv_text4_colored"
-            case advText1 = "adv_text1"
-            case advText2 = "adv_text2"
-            case advText3 = "adv_text3"
-            case advText4 = "adv_text4"
-            case sheetBottomTitle = "sheet_bottom_title"
-        }
+        case titleDis = "title_dis"
+        case titleAct = "title_act"
+        case subtitleDis = "subtitle_dis"
+        case subtitleAct = "subtitle_act"
+        case topIconDis = "top_icon_dis"
+        case topIconAct = "top_icon_act"
+        case boxTitleAct = "box_title_act"
+        case boxTitleDis = "box_title_dis"
+        case box1Subtitle = "box1_subtitle"
+        case box2Subtitle = "box2_subtitle"
+        case box3Subtitle = "box3_subtitle"
+        case box4Subtitle = "box4_subtitle"
+        case boxCheckMarkAct = "box_check_mark_act"
+        case boxCheckMarkDis = "box_check_mark_dis"
+        case box1IconAct = "box1_icon_act"
+        case box1IconDis = "box1_icon_dis"
+        case box2IconAct = "box2_icon_act"
+        case box2IconDis = "box2_icon_dis"
+        case box3IconAct = "box3_icon_act"
+        case box3IconDis = "box3_icon_dis"
+        case box4IconAct = "box4_icon_act"
+        case box4IconDis = "box4_icon_dis"
+        case topButtonTitle = "top_button_title"
+        case bottomButtonTitle = "bottom_button_title"
+        case sheetTitle = "sheet_title"
+        case sheetSubtitle = "sheet_subtitle"
+        case advText1Colored = "adv_text1_colored"
+        case advText2Colored = "adv_text2_colored"
+        case advText3Colored = "adv_text3_colored"
+        case advText4Colored = "adv_text4_colored"
+        case advText1 = "adv_text1"
+        case advText2 = "adv_text2"
+        case advText3 = "adv_text3"
+        case advText4 = "adv_text4"
+        case sheetBottomTitle = "sheet_bottom_title"
+    }
 }
