@@ -132,6 +132,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             make.height.equalTo(50)
         }
         //test
+        //test2
         bannerView.snp.makeConstraints { make in
 //            make.edges.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
