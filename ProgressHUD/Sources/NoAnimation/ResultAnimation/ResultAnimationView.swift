@@ -120,9 +120,23 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
         circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
+        let bottomViewButton = UIView()
+        bottomViewButton.backgroundColor = .red
+        
+        bannerContainer.addSubview(bottomViewButton)
         bannerContainer.addSubview(bannerView)
+        
+        bottomViewButton.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
         bannerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+//            make.edges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalTo(bottomViewButton.snp.top).offset(-5)
         }
         
         bannerView.tariffButtonTapped = { [weak self] in
@@ -254,5 +268,3 @@ final class Storage {
         featuresStates.values.allSatisfy { $0 == true }
     }
 }
-
-//
