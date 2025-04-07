@@ -224,7 +224,7 @@ public struct Gap: Codable {
 struct Objec: Codable {
     let prgrsTitle: String
     let strigs: [Strig]
-    let strigs_hand_start: [Strig]
+    let strigs_hand_start: [Strig]?
     let messIcon, messTlt: String
     let subMessTlt, subMessTxt: String?
     let messSbtlt, messBtn: String
