@@ -66,7 +66,7 @@ final class NewAnimationOneViewController: UIViewController {
     init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.titleText = title
-        self.myCount = model.strigs.count
+        self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
@@ -160,14 +160,14 @@ final class NewAnimationOneViewController: UIViewController {
             formatter.dateFormat = "HH:mm:ss"
             let timeString = formatter.string(from: Date())
             
-            let fullText = "[\(timeString)] \(model.strigs[labelCount].name)"
+            let fullText = "[\(timeString)] \(model.strigs?[labelCount].name ?? "")"
             let attributedString = NSMutableAttributedString(string: fullText)
             let timeRange = NSRange(location: 0, length: "[\(timeString)]".count)
             attributedString.addAttribute(.foregroundColor, value: defaultGray, range: timeRange)
-            let messageRange = NSRange(location: timeRange.length + 1, length: model.strigs[labelCount].name.count)
+            let messageRange = NSRange(location: timeRange.length + 1, length: model.strigs?[labelCount].name.count ?? 0)
             
 
-            let messageColor: UIColor = model.strigs[labelCount].color?.contains("red") == true ? redColor : defaultColor
+            let messageColor: UIColor = model.strigs?[labelCount].color?.contains("red") == true ? redColor : defaultColor
             attributedString.addAttribute(.foregroundColor, value: messageColor, range: messageRange)
             label.attributedText = attributedString
             label.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : 15, weight: .medium)
