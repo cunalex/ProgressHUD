@@ -68,7 +68,7 @@ final class NewAnimationFourViewController: UIViewController {
     init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.titleText = title
-        self.myCount = model.strigs.count
+        self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
@@ -156,11 +156,11 @@ final class NewAnimationFourViewController: UIViewController {
             progressView.setProgressValue(progress: progress)
 
             let niceAddText = makeNiceStr(str: model.strigsSubtlt ?? "", num: labelCount + 1)
-            let boxView = LongBoxView(titleText: model.strigs[labelCount].name,
+            let boxView = LongBoxView(titleText: model.strigs?[labelCount].name ?? "",
                                       subtitleText: niceAddText,
                                       addText: model.strigsTlt ?? "",
                                       addRes: model.strigsRes ?? "",
-                                      iconName: model.strigs[labelCount].icn ?? "")
+                                      iconName: model.strigs?[labelCount].icn ?? "")
 
             boxView.alpha = 0.0
             labelCount += 1
