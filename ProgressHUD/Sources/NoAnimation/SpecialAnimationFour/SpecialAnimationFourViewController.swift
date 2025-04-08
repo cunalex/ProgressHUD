@@ -5,6 +5,7 @@ import ScreenShield
 public protocol SpecialAnimationDelegate: AnyObject {
     func buttonTapped(isResult: Bool)
     func eventsFunc(event: EventsName)
+    func scanButtonTapped()
 }
 
 public class SpecialAnimationFourViewController: UIViewController {

@@ -27,7 +27,7 @@ extension UIView {
     }
 }
 
-class ResultAnimationView: UIView, InstanceFromNibProtocol {
+final class ResultAnimationView: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = ResultAnimationView
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
@@ -68,6 +68,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var tariffButtonTapped: (() -> Void)?
     var openSheetVCTapped: (() -> Void)?
     var sendEvent: ((EventsName) -> Void)?
+    var scanButtonTaped: (() -> Void)?
     var showStatistView: (() -> Void)?
     
     override func awakeFromNib() {
@@ -152,6 +153,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         bannerView.openSheetVCTapped = { [weak self] in
             self?.openSheetVCTapped?()
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(scanButtonTap))
+        
+        animationView.addGestureRecognizer(tap)
     }
     
     func setup(with model: AuthorizationOfferModel?, isTarifPaidAndActive: Bool) {
@@ -245,6 +250,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     
     @objc func bzzz() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    
+    @objc func scanButtonTap() {
+        scanButtonTaped?()
     }
 }
 

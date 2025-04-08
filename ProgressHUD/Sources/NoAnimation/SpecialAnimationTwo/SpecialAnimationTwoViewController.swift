@@ -26,6 +26,8 @@ enum LogLevel {
 }
 
 public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimationDelegate {
+    public func scanButtonTapped() {}
+    
     public func eventsFunc(event: EventsName) {
         delegate?.eventsFunc(event: event)
     }

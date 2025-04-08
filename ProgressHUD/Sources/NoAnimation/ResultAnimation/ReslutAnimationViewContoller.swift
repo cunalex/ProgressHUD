@@ -12,6 +12,8 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         delegate?.buttonTapped(isResult: isResult)
     }
     
+    public func scanButtonTapped() {}
+    
     private let resultView = ResultAnimationView.instanceFromNib()
     public var model: AuthorizationOfferModel?
     public var isPaid: Bool
@@ -159,6 +161,10 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
             let statisticsView = StatsView()
             statisticsView.setup(with: model)
             statisticsView.show(in: self)
+        }
+        
+        resultView.scanButtonTaped = { [weak self] in
+            self?.delegate?.scanButtonTapped()
         }
     }
     
