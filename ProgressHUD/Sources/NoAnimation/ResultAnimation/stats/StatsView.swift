@@ -132,7 +132,7 @@ final class StatsView: UIView {
         
         iconImg.kf.setImage(with: icon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         titleLabel.text = model.scn?.stats?.statBtnTitle
-        subtitleLabel.text = model.scn?.stats?.statBtnTitle
+        subtitleLabel.text = model.scn?.stats?.statBtnSubtitle
         
         let tempStr = String(model.scn?.stats?.statScnCount2 ?? 0)
         
