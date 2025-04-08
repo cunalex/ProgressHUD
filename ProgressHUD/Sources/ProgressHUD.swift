@@ -69,6 +69,7 @@ public class ProgressHUD: UIView {
     public var isNewAnimationOn = true
     public var isShow = true
     public var isSheet = true
+    public var daysCounter = 0
 
 	public static let shared = ProgressHUD()
 
