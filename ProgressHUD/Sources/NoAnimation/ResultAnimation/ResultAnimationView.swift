@@ -89,19 +89,18 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             layoutIfNeeded()
         } else {
             if isVerySmallDevice {
-                bannerHeight.constant = 445
-//                bannerHeight.constant = 500
-//                stackheigt.constant = 130
-//                stackWidth.constant = 130
-                stackheigt.constant = 110
-                stackWidth.constant = 110
+//                bannerHeight.constant = 445
+                bannerHeight.constant = 500
+                stackheigt.constant = 130
+                stackWidth.constant = 130
                 topConst.constant = 15
                 subTop.constant = 5
                 animTop.constant = 0
                 bannerTop.constant = 0
                 lhConst.constant = 250
                 lwConst.constant = 250
-                inactiveImageView.contentMode = .scaleAspectFit
+//                inactiveImageView.contentMode = .scaleAspectFit
+                inactiveImageView.contentMode = .scaleToFill
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
@@ -114,6 +113,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bannerTop.constant = 5
                 lhConst.constant = 270
                 lwConst.constant = 270
+                inactiveImageView.contentMode = .scaleToFill
                 
                 titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
