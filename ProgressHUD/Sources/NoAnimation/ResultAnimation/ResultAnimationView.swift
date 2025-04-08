@@ -114,6 +114,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 
                 layoutIfNeeded()
             } else if isSmallDevice {
+                stackheigt.constant = 130
+                stackWidth.constant = 130
                 topConst.constant = 10
                 subTop.constant = -2
                 animTop.constant = -6
