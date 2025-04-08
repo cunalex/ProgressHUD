@@ -105,8 +105,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 lwConst.constant = 250
                 circularLeadingConstraint.constant = 40
                 circularTopConstraint.constant = 40
-                circularBottomConstraint.constant = 40
-                circularTrailingConstraint.constant = 40
+                circularBottomConstraint.constant = -40
+                circularTrailingConstraint.constant = -40
                 inactiveImageView.contentMode = .scaleAspectFit
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
