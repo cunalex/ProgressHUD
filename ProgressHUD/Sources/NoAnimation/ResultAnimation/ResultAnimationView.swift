@@ -60,6 +60,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private var couter = 0
     private var progress: Float = 0
     @IBOutlet weak var circularProgress: CircularProgressView!
+    private let statsViewButton = CustomStatsButton()
 
     private var timer: Timer?
     var timerBzz: Timer?
@@ -67,6 +68,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var tariffButtonTapped: (() -> Void)?
     var openSheetVCTapped: (() -> Void)?
     var sendEvent: ((EventsName) -> Void)?
+    var showStatistView: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -120,9 +122,19 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
         circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
+        bannerContainer.addSubview(statsViewButton)
         bannerContainer.addSubview(bannerView)
+        
+        statsViewButton.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
         bannerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalTo(statsViewButton.snp.top).offset(-5)
         }
         
         bannerView.tariffButtonTapped = { [weak self] in
@@ -148,6 +160,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         bannerView.setup(with: model, isPaid: isTarifPaidAndActive)
         backgroundColor = .white
         animationView.backgroundColor = .white
+        
+        statsViewButton.setup(with: model) { [weak self] in
+            self?.showStatistView?()
+        }
         
         if isTarifPaidAndActive {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {

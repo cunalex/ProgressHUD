@@ -78,10 +78,10 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXz-fu-YBY">
-                    <rect key="frame" x="15" y="449.33333333333326" width="363" height="280"/>
+                    <rect key="frame" x="15" y="449.33333333333326" width="363" height="335"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="280" id="LP8-Su-Bej"/>
+                        <constraint firstAttribute="height" constant="335" id="LP8-Su-Bej"/>
                     </constraints>
                 </view>
             </subviews>

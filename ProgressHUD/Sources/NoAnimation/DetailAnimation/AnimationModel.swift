@@ -143,7 +143,7 @@ struct ScnModel: Codable {
         var statScnSubtitle1: String?
         var statBtnTitle: String?
         var statScnImg1: String?
-        var statScnCount2: Int?
+        var statScnCount2: String?
     }
 }
 
