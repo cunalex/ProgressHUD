@@ -103,10 +103,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bannerTop.constant = 0
                 lhConst.constant = 250
                 lwConst.constant = 250
-                circularLeadingConstraint.constant = 40
-                circularTopConstraint.constant = 40
-                circularBottomConstraint.constant = -40
-                circularTrailingConstraint.constant = -40
+                circularLeadingConstraint.constant = 42
+                circularTopConstraint.constant = 42
+                circularBottomConstraint.constant = -42
+                circularTrailingConstraint.constant = -42
                 inactiveImageView.contentMode = .scaleAspectFit
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -118,9 +118,13 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 subTop.constant = 10
                 animTop.constant = 5
                 bannerTop.constant = 5
-                lhConst.constant = 270
-                lwConst.constant = 270
-                inactiveImageView.contentMode = .scaleToFill
+                lhConst.constant = 250
+                lwConst.constant = 250
+                circularLeadingConstraint.constant = 42
+                circularTopConstraint.constant = 42
+                circularBottomConstraint.constant = -42
+                circularTrailingConstraint.constant = -42
+                inactiveImageView.contentMode = .scaleAspectFit
                 
                 titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
