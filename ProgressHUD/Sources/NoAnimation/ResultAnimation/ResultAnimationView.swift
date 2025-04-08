@@ -122,10 +122,6 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
         circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
-        statsViewButton.setup(with: model) { [weak self] in
-            self?.showStatistView?()
-        }
-        
         bannerContainer.addSubview(statsViewButton)
         bannerContainer.addSubview(bannerView)
         
@@ -164,6 +160,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         bannerView.setup(with: model, isPaid: isTarifPaidAndActive)
         backgroundColor = .white
         animationView.backgroundColor = .white
+        
+        statsViewButton.setup(with: model) { [weak self] in
+            self?.showStatistView?()
+        }
         
         if isTarifPaidAndActive {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
