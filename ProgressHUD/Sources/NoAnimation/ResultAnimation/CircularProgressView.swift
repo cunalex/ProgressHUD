@@ -65,4 +65,14 @@ class CircularProgressView: UIView {
         progressLayer.strokeEnd = CGFloat(value)
         progressLayer.add(animation, forKey: "animateCircle")
     }
+    
+    func updateLayers() {
+            trackLayer.path = viewCGPath
+            progressLayer.path = viewCGPath
+        }
+
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            updateLayers()
+        }
 }
