@@ -156,7 +156,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(scanButtonTap))
         
-        animationView.addGestureRecognizer(tap)
+        circularProgress.addGestureRecognizer(tap)
     }
     
     func setup(with model: AuthorizationOfferModel?, isTarifPaidAndActive: Bool) {
@@ -176,7 +176,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 8 : 12, weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 10 : 14, weight: .bold)
                 ])
@@ -201,7 +201,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 10 : 12, weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 12 : 14, weight: .bold)
                 ])
