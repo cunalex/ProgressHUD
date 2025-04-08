@@ -79,13 +79,8 @@ final class StatsView: UIView {
         containerView.addSubview(closeButton)
         
         containerView.snp.makeConstraints { make in
-//            make.center.equalToSuperview()
-//            make.horizontalEdges.equalToSuperview().inset(27)
-            
             make.center.equalToSuperview()
-                make.horizontalEdges.equalToSuperview().inset(27).priority(.required)
-                make.width.lessThanOrEqualTo(500).priority(.required)
-                make.width.greaterThanOrEqualToSuperview().inset(27).priority(.required)
+            make.horizontalEdges.equalToSuperview().inset(UIDevice.current.userInterfaceIdiom == .pad ? 150 : 27)
         }
         
         iconImg.snp.makeConstraints { make in
