@@ -227,7 +227,7 @@ struct Objec: Codable {
     let strigs_hand_start: [Strig]?
     let messIcon, messTlt: String
     let subMessTlt, subMessTxt: String?
-    let messSbtlt, messBtn: String
+    let messBtn: String
     let messTltPrc, messTltCmpl, subMessTxtOne, subMessTxtTwo: String?
     let subMessTxtThree, strigsTlt, strigsSubtlt, strigsRes: String?
     let messTltRed: [String]?
@@ -239,7 +239,6 @@ struct Objec: Codable {
         case messTlt = "mess_tlt"
         case subMessTlt = "sub_mess_tlt"
         case subMessTxt = "sub_mess_txt"
-        case messSbtlt = "mess_sbtlt"
         case messBtn = "mess_btn"
         case messTltPrc = "mess_tlt_prc"
         case messTltCmpl = "mess_tlt_cmpl"
