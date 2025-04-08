@@ -240,10 +240,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
                 
-                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 70 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
-                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 70 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
-                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -70 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
-                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -70 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 72 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 72 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -72 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -72 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
                 layoutIfNeeded()
             }
             
