@@ -216,10 +216,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
                 
-                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 34)
-                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 34)
-                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -34)
-                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -34)
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 33)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 33)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -33)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -33)
                 layoutIfNeeded()
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
