@@ -264,9 +264,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                         circularTopConstraint.constant = 41
                         circularBottomConstraint.constant = -41
                         circularTrailingConstraint.constant = -41
+                        circularProgress.configureProgressViewToBeCircular()
                         circularProgress.layoutIfNeeded()
                         layoutIfNeeded()
                         circularProgress.layoutIfNeeded()
+                        circularProgress.configureProgressViewToBeCircular()
                     }
                 }
                 
