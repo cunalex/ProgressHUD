@@ -251,27 +251,27 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
                 
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    
-                } else {
-                    if isVerySmallDevice {
-                        circularLeadingConstraint.constant = 42
-                        circularTopConstraint.constant = 42
-                        circularBottomConstraint.constant = -42
-                        circularTrailingConstraint.constant = -42
-                        layoutIfNeeded()
-                    } else if isSmallDevice {
-                        circularLeadingConstraint.constant = 41
-                        circularTopConstraint.constant = 41
-                        circularBottomConstraint.constant = -41
-                        circularTrailingConstraint.constant = -41
-                        circularProgress.configureProgressViewToBeCircular()
-                        circularProgress.layoutIfNeeded()
-                        layoutIfNeeded()
-                        circularProgress.layoutIfNeeded()
-                        circularProgress.configureProgressViewToBeCircular()
-                    }
-                }
+//                if UIDevice.current.userInterfaceIdiom == .pad {
+//                    
+//                } else {
+//                    if isVerySmallDevice {
+//                        circularLeadingConstraint.constant = 42
+//                        circularTopConstraint.constant = 42
+//                        circularBottomConstraint.constant = -42
+//                        circularTrailingConstraint.constant = -42
+//                        layoutIfNeeded()
+//                    } else if isSmallDevice {
+//                        circularLeadingConstraint.constant = 41
+//                        circularTopConstraint.constant = 41
+//                        circularBottomConstraint.constant = -41
+//                        circularTrailingConstraint.constant = -41
+//                        circularProgress.configureProgressViewToBeCircular()
+//                        circularProgress.layoutIfNeeded()
+//                        layoutIfNeeded()
+//                        circularProgress.layoutIfNeeded()
+//                        circularProgress.configureProgressViewToBeCircular()
+//                    }
+//                }
                 
             }
             
