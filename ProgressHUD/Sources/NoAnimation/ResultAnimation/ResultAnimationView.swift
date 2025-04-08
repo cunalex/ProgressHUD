@@ -216,10 +216,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
                 
-                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
-                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
-                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
-                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
                 layoutIfNeeded()
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
@@ -240,10 +240,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
                 
-                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
-                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
-                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
-                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
                 layoutIfNeeded()
             }
             
