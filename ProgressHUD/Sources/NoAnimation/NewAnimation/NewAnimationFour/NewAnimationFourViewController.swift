@@ -84,7 +84,7 @@ final class NewAnimationFourViewController: UIViewController {
         alert = CustomAlertViewFour(iconName: model.messIcon,
                                  titleLabelText: model.messTlt,
                                  descriptionFirstLabelText: model.messTltCmpl ?? "",
-                                 descriptionLowLabelText: model.messSbtlt,
+                                 descriptionLowLabelText: model.messSbtlt ?? "",
                                  goButtonText: model.messBtn, strArray: model.messTltRed ?? [""])
         titleLabel.text = titleText
         view.addSubview(titleLabel)

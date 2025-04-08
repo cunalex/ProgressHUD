@@ -83,7 +83,7 @@ final class NewAnimationOneViewController: UIViewController {
                                 titleLabelText: model.messTlt,
                                 descriptionFirstLabelText: model.subMessTlt ?? "",
                                 descriptionSecondLabelText: model.subMessTxt ?? "",
-                                descriptionLowLabelText: model.messSbtlt,
+                                descriptionLowLabelText: model.messSbtlt ?? "",
                                 goButtonText: model.messBtn)
         titleLabel.text = titleText
         view.addSubview(titleLabel)

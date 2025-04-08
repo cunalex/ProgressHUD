@@ -82,7 +82,7 @@ final class NewAnimationThreeViewController: UIViewController {
         alert = CustomAlertViewThree(iconName: model.messIcon,
                                  titleLabelText: model.messTlt,
                                  descriptionFirstLabelText: model.messTltCmpl ?? "",
-                                 descriptionSecondLabelText: model.messSbtlt,
+                                 descriptionSecondLabelText: model.messSbtlt ?? "",
                                  goButtonText: model.messBtn)
         titleLabel.text = titleText
         view.addSubview(titleLabel)
