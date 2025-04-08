@@ -83,6 +83,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             animationTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
             lhConst.constant = 420
             lwConst.constant = 420
+            circularLeadingConstraint.constant = 60
+            circularTopConstraint.constant = 60
+            circularBottomConstraint.constant = -60
+            circularTrailingConstraint.constant = -60
             bannerHeight.constant = 421
             inactiveImageView.contentMode = .scaleToFill
             stackheigt.constant = 215
@@ -212,10 +216,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
                 
-                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 30)
-                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 30)
-                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -30)
-                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -30)
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 32)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -32)
                 layoutIfNeeded()
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
@@ -240,7 +244,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
                 circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
                 circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
-                layoutIfNeeded()                
+                layoutIfNeeded()
             }
             
             circularProgress.isHidden = false
