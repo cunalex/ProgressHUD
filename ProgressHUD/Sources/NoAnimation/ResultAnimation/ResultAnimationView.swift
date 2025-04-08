@@ -224,13 +224,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     } else if isSmallDevice {
                         circularLeadingConstraint.constant = 35
                         circularTopConstraint.constant = 35
-                        circularBottomConstraint.constant = -35
-                        circularTrailingConstraint.constant = -35
+                        circularBottomConstraint.constant = -34
+                        circularTrailingConstraint.constant = -34
                         circularProgress.configureProgressViewToBeCircular()
-                        circularProgress.layoutIfNeeded()
                         layoutIfNeeded()
-                        circularProgress.layoutIfNeeded()
-                        circularProgress.configureProgressViewToBeCircular()
                     }
                 }
                     
