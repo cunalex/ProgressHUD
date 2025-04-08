@@ -152,6 +152,14 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.sendEvent = { [weak self] event in
             self?.delegate?.eventsFunc(event: event)
         }
+        
+        resultView.showStatistView = { [weak self] in
+            guard let self else { return }
+            
+            let statisticsView = StatsView()
+            statisticsView.setup(with: model)
+            statisticsView.show(in: self)
+        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {

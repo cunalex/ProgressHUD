@@ -60,6 +60,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private var couter = 0
     private var progress: Float = 0
     @IBOutlet weak var circularProgress: CircularProgressView!
+    private let statsViewButton = CustomStatsButton()
 
     private var timer: Timer?
     var timerBzz: Timer?
@@ -67,6 +68,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var tariffButtonTapped: (() -> Void)?
     var openSheetVCTapped: (() -> Void)?
     var sendEvent: ((EventsName) -> Void)?
+    var showStatistView: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -120,28 +122,27 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
         circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
-        let bottomViewButton = UIView()
-        bottomViewButton.backgroundColor = .red
+        statsViewButton.setup(with: model) { [weak self] in
+            self?.showStatistView?()
+        }
         
-        bannerContainer.addSubview(bottomViewButton)
+        bannerContainer.addSubview(statsViewButton)
         bannerContainer.addSubview(bannerView)
         
-        bottomViewButton.snp.makeConstraints { make in
+        statsViewButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(50)
         }
-        //test
-        //test2
+        
         bannerView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
             make.top.equalToSuperview()
-            make.bottom.equalTo(bottomViewButton.snp.top).offset(-5)
+            make.bottom.equalTo(statsViewButton.snp.top).offset(-5)
         }
         
         bannerView.tariffButtonTapped = { [weak self] in
-            self?.tariffButtonTapped?()
+            self?.showStatistView?()
         }
         
         bannerView.progressSwitchTapped = { [weak self] isOn in
