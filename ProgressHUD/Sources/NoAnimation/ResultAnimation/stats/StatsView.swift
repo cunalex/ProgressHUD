@@ -133,11 +133,9 @@ final class StatsView: UIView {
         iconImg.kf.setImage(with: icon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         titleLabel.text = model.scn?.stats?.statBtnTitle
         subtitleLabel.text = model.scn?.stats?.statBtnSubtitle
-        
-        let tempStr = String(model.scn?.stats?.statScnCount2 ?? 0)
-        
+                
         textBox1.setup(icon: icon1, title: model.scn?.stats?.statScnTitle1 ?? "", nubmerStr: model.scn?.stats?.statScnSubtitle1 ?? "", withLine: true)
-        textBox2.setup(icon: icon2, title: model.scn?.stats?.statScnText2 ?? "", nubmerStr: tempStr, withLine: true) //!
+        textBox2.setup(icon: icon2, title: model.scn?.stats?.statScnText2 ?? "", nubmerStr: model.scn?.stats?.statScnCount2 ?? "", withLine: true)
         textBox3.setup(icon: icon3, title: model.scn?.stats?.statScnText3 ?? "", nubmerStr: model.scn?.stats?.statScnCount3 ?? "", withLine: true)
         textBox4.setup(icon: icon4, title: model.scn?.stats?.statScnText4 ?? "", nubmerStr: model.scn?.stats?.statScnCount4 ?? "", withLine: true)
         textBox5.setup(icon: icon5, title: model.scn?.stats?.statScnText5 ?? "", nubmerStr: model.scn?.stats?.statScnCount5 ?? "", withLine: false)

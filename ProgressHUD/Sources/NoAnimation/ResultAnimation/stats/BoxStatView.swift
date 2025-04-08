@@ -64,7 +64,7 @@ final class BoxStatView: UIView {
     }
     
     func setup(icon: URL, title: String, nubmerStr: String, withLine: Bool) {
-//        self.icon.kf.setImage(with: icon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
+        self.icon.kf.setImage(with: icon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         self.titleLabel.text = title
         self.numberText.text = nubmerStr
         
