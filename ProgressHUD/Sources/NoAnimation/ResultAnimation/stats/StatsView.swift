@@ -81,6 +81,7 @@ final class StatsView: UIView {
         containerView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(27)
+            make.width.lessThanOrEqualTo(400).priority(.required)
         }
         
         iconImg.snp.makeConstraints { make in
