@@ -222,10 +222,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                         circularTrailingConstraint.constant = -38
                         layoutIfNeeded()
                     } else if isSmallDevice {
-                        circularLeadingConstraint.constant = 38
-                        circularTopConstraint.constant = 38
-                        circularBottomConstraint.constant = -36
-                        circularTrailingConstraint.constant = -36
+                        circularLeadingConstraint.constant = 35
+                        circularTopConstraint.constant = 35
+                        circularBottomConstraint.constant = -35
+                        circularTrailingConstraint.constant = -35
                         layoutIfNeeded()
                     }
                 }
