@@ -67,7 +67,7 @@ class CircularProgressView: UIView {
     }
     
     func updateLayers() {
-            trackLayer.path = viewCGPath
+        tracklayer.path = viewCGPath
             progressLayer.path = viewCGPath
         }
 
