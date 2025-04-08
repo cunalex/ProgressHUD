@@ -115,19 +115,19 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 layoutIfNeeded()
             } else if isSmallDevice {
                 topConst.constant = 10
-                subTop.constant = 2
+                subTop.constant = -2
                 animTop.constant = -6
-                bannerTop.constant = -7
-                lhConst.constant = 250
-                lwConst.constant = 250
-                circularLeadingConstraint.constant = 42
-                circularTopConstraint.constant = 42
-                circularBottomConstraint.constant = -42
-                circularTrailingConstraint.constant = -42
+                bannerTop.constant = -8
+                lhConst.constant = 248
+                lwConst.constant = 248
+                circularLeadingConstraint.constant = 41
+                circularTopConstraint.constant = 41
+                circularBottomConstraint.constant = -41
+                circularTrailingConstraint.constant = -41
                 inactiveImageView.contentMode = .scaleAspectFit
                 
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-                subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
                 layoutIfNeeded()
