@@ -36,7 +36,8 @@ final class NewAnimationOneViewController: UIViewController {
     private let greenColor = UIColor().hexStringToUIColor(hex: "#65D65C")
     private let defaultColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
     private let defaultGray = UIColor.init(red: 124/255, green: 124/255, blue: 124/255, alpha: 1)
-
+    private let isFromRsult: Bool
+    
     weak var delegate: SpecialAnimationDelegate?
     
     override func viewDidLoad() {
@@ -45,8 +46,14 @@ final class NewAnimationOneViewController: UIViewController {
         setupUI()
         startProgress()
         alert.goButtonCompletion = { [weak self] in
-            self?.delegate?.eventsFunc(event: .scan1Action)
-            self?.delegate?.buttonTapped(isResult: false)
+            guard let self else { return }
+            
+            if isFromRsult {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.delegate?.eventsFunc(event: .scan1Action)
+                self.delegate?.buttonTapped(isResult: false)
+            }
         }
         
         self.delegate?.eventsFunc(event: .scan1Show)
@@ -64,11 +71,12 @@ final class NewAnimationOneViewController: UIViewController {
         self.delegate?.eventsFunc(event: .scan1Hide)
     }
     
-    init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
+    init(model: Objec, title: String, isFromRsult: Bool, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.titleText = title
         self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
+        self.isFromRsult = isFromRsult
         
         super.init(nibName: nil, bundle: nil)
     }
