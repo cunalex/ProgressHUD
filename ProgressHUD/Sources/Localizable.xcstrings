@@ -123,25 +123,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Active"
+            "value" : "Deep Scan"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activo"
+            "value" : "Escaneo profundo"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "פָּעִיל"
+            "value" : "סריקה מעמיקה"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アクティブ"
+            "value" : "ディープスキャン"
           }
         }
       }
