@@ -138,7 +138,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         }
         
         bannerView.tariffButtonTapped = { [weak self] in
-            self?.showStatistView?()
+            self?.tariffButtonTapped?()
         }
         
         bannerView.progressSwitchTapped = { [weak self] isOn in
