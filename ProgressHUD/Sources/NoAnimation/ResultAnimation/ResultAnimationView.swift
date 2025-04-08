@@ -53,6 +53,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var stackheigt: NSLayoutConstraint!
     @IBOutlet weak var stackWidth: NSLayoutConstraint!
     
+    
+    @IBOutlet weak var circularLeadingConstraint: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private let bannerView = SpinnerView.instanceFromNib()
     private var model: AuthorizationOfferModel?
@@ -99,6 +103,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bannerTop.constant = 0
                 lhConst.constant = 250
                 lwConst.constant = 250
+                circularLeadingConstraint.constant = 50
 //                inactiveImageView.contentMode = .scaleAspectFit
                 inactiveImageView.contentMode = .scaleToFill
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
