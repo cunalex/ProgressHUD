@@ -201,7 +201,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 10 : 12, weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive), attributes: [
+                let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsActive), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 12 : 14, weight: .bold)
                 ])
@@ -231,7 +231,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
             ])
-            let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
+            let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsOff).uppercased(), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
             ])
