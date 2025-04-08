@@ -52,10 +52,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var bannerTop: NSLayoutConstraint!
     @IBOutlet weak var stackheigt: NSLayoutConstraint!
     @IBOutlet weak var stackWidth: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var circularLeadingConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var circularTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circularBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circularTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private let bannerView = SpinnerView.instanceFromNib()
@@ -103,9 +103,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bannerTop.constant = 0
                 lhConst.constant = 250
                 lwConst.constant = 250
-                circularLeadingConstraint.constant = 50
-//                inactiveImageView.contentMode = .scaleAspectFit
-                inactiveImageView.contentMode = .scaleToFill
+                circularLeadingConstraint.constant = 40
+                circularTopConstraint.constant = 40
+                circularBottomConstraint.constant = 40
+                circularTrailingConstraint.constant = 40
+                inactiveImageView.contentMode = .scaleAspectFit
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
