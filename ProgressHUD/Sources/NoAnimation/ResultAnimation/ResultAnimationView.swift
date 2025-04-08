@@ -212,27 +212,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
                 
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    
-                } else {
-                    if isVerySmallDevice {
-                        circularLeadingConstraint.constant = 38
-                        circularTopConstraint.constant = 38
-                        circularBottomConstraint.constant = -38
-                        circularTrailingConstraint.constant = -38
-                        layoutIfNeeded()
-                    } else if isSmallDevice {
-                        circularLeadingConstraint.constant = 35
-                        circularTopConstraint.constant = 35
-                        circularBottomConstraint.constant = -34
-                        circularTrailingConstraint.constant = -34
-//                        circularProgress.configureProgressViewToBeCircular()
-                        layoutIfNeeded()
-                        
-                    }
-                }
-                    
-                
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 30)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 30)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -30)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -30)
+                layoutIfNeeded()
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
@@ -252,24 +236,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
                 
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    
-                } else {
-                    if isVerySmallDevice {
-                        circularLeadingConstraint.constant = 42
-                        circularTopConstraint.constant = 42
-                        circularBottomConstraint.constant = -42
-                        circularTrailingConstraint.constant = -42
-                        layoutIfNeeded()
-                    } else if isSmallDevice {
-                        circularLeadingConstraint.constant = 41
-                        circularTopConstraint.constant = 41
-                        circularBottomConstraint.constant = -41
-                        circularTrailingConstraint.constant = -41
-                        layoutIfNeeded()
-                    }
-                }
-                
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 30 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -30 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                layoutIfNeeded()                
             }
             
             circularProgress.isHidden = false

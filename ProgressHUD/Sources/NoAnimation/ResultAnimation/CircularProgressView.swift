@@ -68,11 +68,11 @@ class CircularProgressView: UIView {
     
     func updateLayers() {
         tracklayer.path = viewCGPath
-            progressLayer.path = viewCGPath
-        }
-
-        override func layoutSubviews() {
-            super.layoutSubviews()
-            updateLayers()
-        }
+        progressLayer.path = viewCGPath
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateLayers()
+    }
 }
