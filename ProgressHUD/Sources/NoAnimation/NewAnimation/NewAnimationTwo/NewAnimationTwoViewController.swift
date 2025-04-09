@@ -86,7 +86,7 @@ final class NewAnimationTwoViewController: UIViewController {
                                  subtitleLabelText: "\(model.messTltPrc ?? "")\n\(model.messTltCmpl ?? "")",
                                  descriptionFirstLabelText: model.subMessTlt ?? "",
                                  descriptionSecondLabelText: "\(model.subMessTxtOne ?? "")\n\(model.subMessTxtTwo ?? "")\n\(model.subMessTxtThree ?? "")",
-                                 descriptionLowLabelText: model.messSbtlt,
+                                 descriptionLowLabelText: model.messSbtlt ?? "",
                                  goButtonText: model.messBtn)
 
         titleLabel.text = titleText

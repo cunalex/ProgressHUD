@@ -66,7 +66,7 @@ class DetailAnimationViewController: UIViewController {
                     self?.delegate?.buttonTapped(isResult: false)
                     return
                 case 1:
-                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, isFromRsult: false, delegate: self?.delegate)
                 case 2:
                     vc = NewAnimationTwoViewController(model: gap.objecs[1], title: gap.title, delegate: self?.delegate)
                 case 3:
@@ -74,7 +74,7 @@ class DetailAnimationViewController: UIViewController {
                 case 4:
                     vc = NewAnimationFourViewController(model: gap.objecs[3], title: gap.titleTwo, delegate: self?.delegate)
                 default:
-                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, isFromRsult: false, delegate: self?.delegate)
                 }
                 
                 self?.navigationController?.pushViewController(vc, animated: true)

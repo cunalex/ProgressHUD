@@ -69,6 +69,7 @@ public class ProgressHUD: UIView {
     public var isNewAnimationOn = true
     public var isShow = true
     public var isSheet = true
+    public var daysCounter = 0
 
 	public static let shared = ProgressHUD()
 
@@ -97,7 +98,7 @@ extension ProgressHUD {
         switch gap.orderIndex {
  
         case 1:
-            vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: delegate)
+            vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, isFromRsult: false, delegate: delegate)
         case 2:
             vc = NewAnimationTwoViewController(model: gap.objecs[1], title: gap.title, delegate: delegate)
         case 3:

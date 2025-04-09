@@ -33,9 +33,11 @@ final class NewAnimationOneViewController: UIViewController {
     private var progress: Float = 0.0
     private var labelCount = 0
     private let redColor = UIColor(red: 255/255, green: 57/255, blue: 39/255, alpha: 1)
+    private let greenColor = UIColor().hexStringToUIColor(hex: "#65D65C")
     private let defaultColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
     private let defaultGray = UIColor.init(red: 124/255, green: 124/255, blue: 124/255, alpha: 1)
-
+    private let isFromRsult: Bool
+    
     weak var delegate: SpecialAnimationDelegate?
     
     override func viewDidLoad() {
@@ -44,8 +46,14 @@ final class NewAnimationOneViewController: UIViewController {
         setupUI()
         startProgress()
         alert.goButtonCompletion = { [weak self] in
-            self?.delegate?.eventsFunc(event: .scan1Action)
-            self?.delegate?.buttonTapped(isResult: false)
+            guard let self else { return }
+            
+            if isFromRsult {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.delegate?.eventsFunc(event: .scan1Action)
+                self.delegate?.buttonTapped(isResult: false)
+            }
         }
         
         self.delegate?.eventsFunc(event: .scan1Show)
@@ -63,11 +71,12 @@ final class NewAnimationOneViewController: UIViewController {
         self.delegate?.eventsFunc(event: .scan1Hide)
     }
     
-    init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
+    init(model: Objec, title: String, isFromRsult: Bool, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.titleText = title
         self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
+        self.isFromRsult = isFromRsult
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -83,7 +92,7 @@ final class NewAnimationOneViewController: UIViewController {
                                 titleLabelText: model.messTlt,
                                 descriptionFirstLabelText: model.subMessTlt ?? "",
                                 descriptionSecondLabelText: model.subMessTxt ?? "",
-                                descriptionLowLabelText: model.messSbtlt,
+                                descriptionLowLabelText: model.messSbtlt ?? "",
                                 goButtonText: model.messBtn)
         titleLabel.text = titleText
         view.addSubview(titleLabel)
@@ -167,7 +176,7 @@ final class NewAnimationOneViewController: UIViewController {
             let messageRange = NSRange(location: timeRange.length + 1, length: model.strigs?[labelCount].name.count ?? 0)
             
 
-            let messageColor: UIColor = model.strigs?[labelCount].color?.contains("red") == true ? redColor : defaultColor
+            let messageColor: UIColor = model.strigs?[labelCount].color?.contains("red") == true ? redColor : model.strigs?[labelCount].color?.contains("green") == true ? greenColor : defaultColor
             attributedString.addAttribute(.foregroundColor, value: messageColor, range: messageRange)
             label.attributedText = attributedString
             label.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : 15, weight: .medium)

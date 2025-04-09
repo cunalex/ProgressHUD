@@ -51,7 +51,7 @@ public struct AuthorizationOfferModel: Codable {
     var homeTitle: String?
     var homeSub: String?
     var homeIcon: String?
-    var scn: ScnModel?
+    public var scn: ScnModel?
     var prtd: PrtdModel?
     var objectTwo: ObjectTwo?
     public var gap: Gap?
@@ -90,7 +90,7 @@ public struct AuthorizationOfferModel: Codable {
     }
 }
 
-struct ScnModel: Codable {
+public struct ScnModel: Codable {
     var title_proc            : String?
     var subtitle_proc        : String?
     var title_anim_proc        : String?
@@ -114,6 +114,8 @@ struct ScnModel: Codable {
     var anim_done_unp        : String?
     var rr_title            : String?
     var rr_subtitle            : String?
+    public var push_title: String?
+    public var push_content: String?
     var stats: Stats?
     var features            : [Features]?
     
@@ -227,7 +229,8 @@ struct Objec: Codable {
     let strigs_hand_start: [Strig]?
     let messIcon, messTlt: String
     let subMessTlt, subMessTxt: String?
-    let messSbtlt, messBtn: String
+    let messSbtlt: String?
+    let messBtn: String
     let messTltPrc, messTltCmpl, subMessTxtOne, subMessTxtTwo: String?
     let subMessTxtThree, strigsTlt, strigsSubtlt, strigsRes: String?
     let messTltRed: [String]?

@@ -27,7 +27,7 @@ extension UIView {
     }
 }
 
-class ResultAnimationView: UIView, InstanceFromNibProtocol {
+final class ResultAnimationView: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = ResultAnimationView
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
@@ -72,6 +72,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var tariffButtonTapped: (() -> Void)?
     var openSheetVCTapped: (() -> Void)?
     var sendEvent: ((EventsName) -> Void)?
+    var scanButtonTaped: (() -> Void)?
     var showStatistView: (() -> Void)?
     
     override func awakeFromNib() {
@@ -175,6 +176,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         bannerView.openSheetVCTapped = { [weak self] in
             self?.openSheetVCTapped?()
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(scanButtonTap))
+        
+        circularProgress.addGestureRecognizer(tap)
     }
     
     func setup(with model: AuthorizationOfferModel?, isTarifPaidAndActive: Bool) {
@@ -194,7 +199,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : (isSmallDevice ? (isVerySmallDevice ? 8 : 9) : 12), weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 14), weight: .bold)
                 ])
@@ -225,8 +230,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 12), weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
-                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
+                let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsActive), attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : (isSmallDevice ? (isVerySmallDevice ? 12 : 13) : 14), weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
@@ -261,7 +266,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 12), weight: .medium)
             ])
-            let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
+            let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsOff).uppercased(), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 12 : 13) : 14), weight: .bold)
             ])
@@ -280,6 +285,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     
     @objc func bzzz() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    
+    @objc func scanButtonTap() {
+        scanButtonTaped?()
     }
 }
 
