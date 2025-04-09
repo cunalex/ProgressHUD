@@ -84,6 +84,10 @@ final class CustomStatsButton: UIView {
         chevroneIcon.kf.setImage(with: smallIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         titleLabel.text = model.scn?.stats?.statBtnTitle
         subtitleLabel.text = model.scn?.stats?.statBtnSubtitle
+        
+        if Locale.preferredLanguages.first?.hasPrefix("ar") == true {
+            icon.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
     }
 
     private func setupTapGesture() {
