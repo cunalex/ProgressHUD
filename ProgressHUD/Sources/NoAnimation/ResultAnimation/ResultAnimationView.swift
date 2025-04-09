@@ -141,7 +141,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 layoutIfNeeded()
             } else if isMiniScreen {
                 topConst.constant = 43
-                subTop.constant = 6
+                subTop.constant = 3
                 layoutIfNeeded()
             }
         }
