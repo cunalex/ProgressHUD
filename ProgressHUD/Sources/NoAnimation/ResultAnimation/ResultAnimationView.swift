@@ -32,6 +32,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
     private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    private let isMiniScreen = UIScreen.main.nativeBounds.height > 2208 && UIScreen.main.nativeBounds.height <= 2340
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -137,6 +138,10 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bringSubviewToFront(subtitleLabel)
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
+                layoutIfNeeded()
+            } else if isMiniScreen {
+                topConst.constant = 43
+                subTop.constant = 3
                 layoutIfNeeded()
             }
         }
