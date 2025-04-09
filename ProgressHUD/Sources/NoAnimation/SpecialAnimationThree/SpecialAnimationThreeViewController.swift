@@ -297,10 +297,11 @@ public class SpecialAnimationThreeViewController: UIViewController {
         showSingleButtonAlert()
     }
     
-    public func goToResult() {
+    public func goToResult(isPaid: Bool) {
         delegate?.eventsFunc(event: .specialOffer3Hide)
+        
         DispatchQueue.main.async {
-            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+            let vc = ReslutAnimationViewContoller(self.model, isPaid: isPaid, delegate: nil)
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

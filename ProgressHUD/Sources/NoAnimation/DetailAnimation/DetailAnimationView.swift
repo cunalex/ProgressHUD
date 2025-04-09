@@ -176,29 +176,16 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.dimView.isHidden = false
             self.bringSubviewToFront(self.dimView)
-//            self.bringSubviewToFront(self.pushView)
             self.bringSubviewToFront(self.alertView)
-//            self.pushTopConstarint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 0 : self.isSmallDevice ? 24 : 55
             
             UIView.animate(withDuration: 1) {
                 self.alertView.isHidden = false
                 self.layoutIfNeeded()
             } completion: { _ in
                 self.pushShow?()
-//                self.hidePush()
             }
         }
     }
-    
-//    private func hidePush() {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 4)  {
-//            self.pushTopConstarint.constant = -150
-//            
-//            UIView.animate(withDuration: 1) {
-//                self.layoutIfNeeded()
-//            }
-//        }
-//    }
     
     func setup(with model: AuthorizationOfferModel?) {
         titleLabel.text = model?.prtd?.title
