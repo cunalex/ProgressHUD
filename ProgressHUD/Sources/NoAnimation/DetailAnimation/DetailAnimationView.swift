@@ -176,9 +176,9 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.dimView.isHidden = false
             self.bringSubviewToFront(self.dimView)
-            self.bringSubviewToFront(self.pushView)
+//            self.bringSubviewToFront(self.pushView)
             self.bringSubviewToFront(self.alertView)
-            self.pushTopConstarint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 0 : self.isSmallDevice ? 24 : 55
+//            self.pushTopConstarint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 0 : self.isSmallDevice ? 24 : 55
             
             UIView.animate(withDuration: 1) {
                 self.alertView.isHidden = false
