@@ -80,7 +80,7 @@ final class StatsView: UIView {
         
         containerView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(27)
+            make.horizontalEdges.equalToSuperview().inset(UIDevice.current.userInterfaceIdiom == .pad ? 150 : 27)
         }
         
         iconImg.snp.makeConstraints { make in

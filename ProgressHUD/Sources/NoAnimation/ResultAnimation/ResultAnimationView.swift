@@ -52,6 +52,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var bannerTop: NSLayoutConstraint!
     @IBOutlet weak var stackheigt: NSLayoutConstraint!
     @IBOutlet weak var stackWidth: NSLayoutConstraint!
+    @IBOutlet weak var circularLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circularTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circularBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var circularTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private let bannerView = SpinnerView.instanceFromNib()
@@ -79,6 +83,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             animationTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
             lhConst.constant = 420
             lwConst.constant = 420
+            circularLeadingConstraint.constant = 72
+            circularTopConstraint.constant = 72
+            circularBottomConstraint.constant = -72
+            circularTrailingConstraint.constant = -72
             bannerHeight.constant = 421
             inactiveImageView.contentMode = .scaleToFill
             stackheigt.constant = 215
@@ -89,7 +97,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             layoutIfNeeded()
         } else {
             if isVerySmallDevice {
-                bannerHeight.constant = 445
+                bannerHeight.constant = 500
                 stackheigt.constant = 130
                 stackWidth.constant = 130
                 topConst.constant = 15
@@ -98,6 +106,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bannerTop.constant = 0
                 lhConst.constant = 250
                 lwConst.constant = 250
+                circularLeadingConstraint.constant = 42
+                circularTopConstraint.constant = 42
+                circularBottomConstraint.constant = -42
+                circularTrailingConstraint.constant = -42
                 inactiveImageView.contentMode = .scaleAspectFit
                 titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -105,13 +117,24 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 
                 layoutIfNeeded()
             } else if isSmallDevice {
-                topConst.constant = 15
-                subTop.constant = 10
-                animTop.constant = 5
-                bannerTop.constant = 5
+                stackheigt.constant = 130
+                stackWidth.constant = 130
+                topConst.constant = 10
+                subTop.constant = -2
+                animTop.constant = -6
+                bannerTop.constant = -8
+                lhConst.constant = 248
+                lwConst.constant = 248
+                circularLeadingConstraint.constant = 41
+                circularTopConstraint.constant = 41
+                circularBottomConstraint.constant = -41
+                circularTrailingConstraint.constant = -41
+                inactiveImageView.contentMode = .scaleAspectFit
                 
-                titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+                titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
                 subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                bringSubviewToFront(subtitleLabel)
+                animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
                 layoutIfNeeded()
             }
@@ -169,11 +192,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 8 : 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : (isSmallDevice ? (isVerySmallDevice ? 8 : 9) : 12), weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 10 : 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 14), weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
@@ -191,14 +214,20 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.animation = animation
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
+                
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 35)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 60 : (isSmallDevice ? (isVerySmallDevice ? 36 : 35) : 35)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -35)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -60 : (isSmallDevice ? (isVerySmallDevice ? -35 : -34) : -35)
+                layoutIfNeeded()
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 10 : 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 12), weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 12 : 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : (isSmallDevice ? (isVerySmallDevice ? 12 : 13) : 14), weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
@@ -209,6 +238,12 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 iconImageView.image = UIImage(resource: .inVector)
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
+                
+                circularLeadingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 72 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularTopConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 72 : (isSmallDevice ? (isVerySmallDevice ? 42 : 41) : 30)
+                circularBottomConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -72 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                circularTrailingConstraint.constant = UIDevice.current.userInterfaceIdiom == .pad ? -72 : (isSmallDevice ? (isVerySmallDevice ? -42 : -41) : -30)
+                layoutIfNeeded()
             }
             
             circularProgress.isHidden = false
@@ -224,11 +259,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         } else {
             let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 12), weight: .medium)
             ])
             let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 12 : 13) : 14), weight: .bold)
             ])
             attributedStrOne.append(attributedStrTwo)
             
