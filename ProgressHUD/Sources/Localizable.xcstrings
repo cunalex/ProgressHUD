@@ -40,6 +40,12 @@
             "value" : "תועבר להגדרות"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda akan diarahkan ke Pengaturan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -50,6 +56,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定画面にリダイレクトされます"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostaniesz przekierowany do Ustawień"
           }
         },
         "pt-PT" : {
@@ -68,6 +80,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlara yönlendirileceksiniz"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您将被重定向到设置"
           }
         }
       }
@@ -111,6 +129,12 @@
             "value" : "ביטול"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -121,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "キャンセル"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
           }
         },
         "pt-PT" : {
@@ -139,6 +169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İptal"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         }
       }
@@ -182,6 +218,12 @@
             "value" : "עַכשָׁיו"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sekarang"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -192,6 +234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "今すぐ"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "teraz"
           }
         },
         "pt-PT" : {
@@ -210,6 +258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "şimdi"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现在"
           }
         }
       }
@@ -253,6 +307,12 @@
             "value" : "אישור"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -260,6 +320,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -281,6 +347,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tamam"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定"
           }
         }
       }
@@ -324,6 +396,12 @@
             "value" : "סריקה מעמיקה"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pindai Mendalam"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -334,6 +412,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ディープスキャン"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Głębokie skanowanie"
           }
         },
         "pt-PT" : {
@@ -352,6 +436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Derin tarama"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深度扫描"
           }
         }
       }
@@ -395,6 +485,12 @@
             "value" : "התחל ניסיון חינם ל-3 ימים"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai Uji Coba Gratis 3 Hari"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,6 +501,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "3日間の無料トライアルを開始"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpocznij 3-dniowy bezpłatny okres próbny"
           }
         },
         "pt-PT" : {
@@ -423,6 +525,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "3 Günlük Ücretsiz Denemeyi Başlat"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始3天免费试用"
           }
         }
       }
@@ -466,6 +574,12 @@
             "value" : "ניתן לבטל בכל עת"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BATALKAN KAPAN SAJA"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -476,6 +590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "いつでもキャンセル可能"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ANULUJ KIEDYKOLWIEK"
           }
         },
         "pt-PT" : {
@@ -494,6 +614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İstediğiniz zaman iptal edin"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "随时取消"
           }
         }
       }
@@ -537,6 +663,12 @@
             "value" : "נָכֶה"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinonaktifkan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -547,6 +679,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無効"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyłączone"
           }
         },
         "pt-PT" : {
@@ -565,6 +703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Devre dışı"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已禁用"
           }
         }
       }
@@ -608,6 +752,12 @@
             "value" : "כבוי"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matikan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -618,6 +768,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オフ"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyłącz"
           }
         },
         "pt-PT" : {
@@ -636,6 +792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kapalı"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
           }
         }
       }
@@ -679,6 +841,12 @@
             "value" : "פועל"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidupkan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -689,6 +857,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オン"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz"
           }
         },
         "pt-PT" : {
@@ -707,6 +881,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açık"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启"
           }
         }
       }
@@ -750,6 +930,12 @@
             "value" : "חינם למשך 3 ימים, ולאחר מכן %@/שבוע"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis selama 3 hari, kemudian %@/minggu"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -760,6 +946,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最初の3日間は無料、その後は%@/週"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bezpłatnie przez 3 dni, potem %@/tydzień"
           }
         },
         "pt-PT" : {
@@ -778,6 +970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "3 gün bedava, sonra %@/hafta"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "免费3天，之后%@/周"
           }
         }
       }
@@ -821,6 +1019,12 @@
             "value" : "שדרג עכשיו לגלישה מאובטחת ללא דליפות נתונים."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tingkatkan sekarang untuk menjelajah dengan aman tanpa kebocoran data."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -831,6 +1035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "今すぐアップグレードして、データ漏洩のない安全な閲覧を実現しましょう。"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaktualizuj teraz, aby przeglądać bezpiecznie bez wycieków danych."
           }
         },
         "pt-PT" : {
@@ -849,6 +1059,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şimdi yükseltme yaparak güvenli tarama ve veri sızıntısı olmadan gezinme."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "立即升级以确保浏览安全，避免数据泄露。"
           }
         }
       }
@@ -892,6 +1108,12 @@
             "value" : "הצעה בלעדית!"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penawaran Eksklusif!"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -902,6 +1124,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "限定オファー！"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oferta ekskluzywna!"
           }
         },
         "pt-PT" : {
@@ -920,6 +1148,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özel Teklif!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "独家优惠！"
           }
         }
       }
