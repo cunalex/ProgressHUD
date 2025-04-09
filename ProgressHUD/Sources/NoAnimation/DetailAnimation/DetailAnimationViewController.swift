@@ -99,11 +99,11 @@ class DetailAnimationViewController: UIViewController {
         delegate?.eventsFunc(event: .specialOffer2ShowNext)
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        detailInformView.showAlertAndPush()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        detailInformView.showAlertAndPush()
+    }
     
     public func goToResult() {
         delegate?.eventsFunc(event: .specialOffer2Hide)
