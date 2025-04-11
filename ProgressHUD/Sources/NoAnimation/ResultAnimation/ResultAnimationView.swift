@@ -33,6 +33,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
     private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
     private let isMiniScreen = UIScreen.main.nativeBounds.height > 2208 && UIScreen.main.nativeBounds.height <= 2340
+    private let isPlusScreenDevice = UIScreen.main.nativeBounds.height == 2208
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -139,9 +140,21 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
                 layoutIfNeeded()
+            } else if isPlusScreenDevice {
+                topConst.constant = 13
+                subTop.constant = -2
+                
+                titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+                subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                bringSubviewToFront(subtitleLabel)
+                layoutIfNeeded()
             } else if isMiniScreen {
                 topConst.constant = 43
                 subTop.constant = 3
+                layoutIfNeeded()
+            } else {
+                topConst.constant = 50
+                subTop.constant = 7
                 layoutIfNeeded()
             }
         }
