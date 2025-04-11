@@ -119,7 +119,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
                 layoutIfNeeded()
-            } else if isSmallDevice || isPlusScreenDevice {
+            } else if isSmallDevice {
                 stackheigt.constant = 130
                 stackWidth.constant = 130
                 topConst.constant = 10
@@ -139,6 +139,14 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 bringSubviewToFront(subtitleLabel)
                 animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
                 
+                layoutIfNeeded()
+            } else if isPlusScreenDevice {
+                topConst.constant = 10
+                subTop.constant = 0
+                
+                titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+                subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                bringSubviewToFront(subtitleLabel)
                 layoutIfNeeded()
             } else if isMiniScreen {
                 topConst.constant = 43
