@@ -143,6 +143,10 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 topConst.constant = 43
                 subTop.constant = 3
                 layoutIfNeeded()
+            } else {
+                topConst.constant = 50
+                subTop.constant = 7
+                layoutIfNeeded()
             }
         }
         
