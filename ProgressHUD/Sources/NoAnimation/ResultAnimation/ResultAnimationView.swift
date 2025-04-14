@@ -197,7 +197,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(scanButtonTap))
         
-        circularProgress.addGestureRecognizer(tap)
+        stackView.addGestureRecognizer(tap)
     }
     
     func setup(with model: AuthorizationOfferModel?, isTarifPaidAndActive: Bool) {
@@ -284,7 +284,7 @@ final class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 10 : 11) : 12), weight: .medium)
             ])
-            let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsOff).uppercased(), attributes: [
+            let attributedStrTwo = NSMutableAttributedString(string: "\n" + localizeText(forKey: .subsActive), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: (isSmallDevice ? (isVerySmallDevice ? 12 : 13) : 14), weight: .bold)
             ])

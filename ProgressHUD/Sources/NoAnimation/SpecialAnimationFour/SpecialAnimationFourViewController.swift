@@ -161,6 +161,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     
     public func goToResult(isPaid: Bool) {
         delegate?.eventsFunc(event: .specialOffer4Hide)
+        
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: isPaid, delegate: self.delegate)
             

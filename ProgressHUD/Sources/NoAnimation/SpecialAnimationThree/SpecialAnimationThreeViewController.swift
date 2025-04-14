@@ -299,6 +299,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     public func goToResult(isPaid: Bool) {
         delegate?.eventsFunc(event: .specialOffer3Hide)
+        
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: isPaid, delegate: self.delegate)
             
