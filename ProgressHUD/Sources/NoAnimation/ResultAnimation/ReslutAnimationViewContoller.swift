@@ -133,11 +133,12 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.tariffButtonTapped = { [weak self] in
             guard let self else { return }
             
-            let vc = SuperAnimationViewController(price: nil, delegate: self)
-            
-            vc.modalPresentationStyle = .fullScreen
-            
-            self.navigationController?.present(vc, animated: true)
+//            let vc = SuperAnimationViewController(price: nil, delegate: self)
+//            
+//            vc.modalPresentationStyle = .fullScreen
+//            
+//            self.navigationController?.present(vc, animated: true)
+            self.delegate?.buttonTapped(isResult: true)
         }
         
         resultView.openSheetVCTapped = { [weak self] in
@@ -159,7 +160,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
             guard let self else { return }
             
             let statisticsView = StatsView()
-            statisticsView.setup(with: model)
+            statisticsView.setup(with: model, isPaid: isPaid)
             statisticsView.show(in: self)
         }
         
