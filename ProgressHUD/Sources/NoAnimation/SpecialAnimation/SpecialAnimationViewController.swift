@@ -123,9 +123,9 @@ public class SpecialAnimationViewController: UIViewController {
         offerView.priceLabel.text =  "\(price) per year. Cancel anytime"
     }
     
-    public func goToResult() {
+    public func goToResult(isPaid: Bool) {
         delegate?.eventsFunc(event: .specialOffer1Hide)
-        let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: self.delegate)
+        let vc = ReslutAnimationViewContoller(self.model, isPaid: isPaid, delegate: self.delegate)
         
         if ProgressHUD.shared.isNewAnimationOn {
             newNC?.pushViewController(vc, animated: true)
