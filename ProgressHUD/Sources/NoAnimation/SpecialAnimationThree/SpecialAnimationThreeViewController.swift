@@ -297,8 +297,9 @@ public class SpecialAnimationThreeViewController: UIViewController {
         showSingleButtonAlert()
     }
     
-    public func goToResult() {
+    public func goToResult(isPaid: Bool) {
         delegate?.eventsFunc(event: .specialOffer3Hide)
+        
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: self.delegate)
             
