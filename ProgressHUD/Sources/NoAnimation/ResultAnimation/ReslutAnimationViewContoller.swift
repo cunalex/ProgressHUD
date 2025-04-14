@@ -167,7 +167,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.scanButtonTaped = { [weak self] in
             guard let self, let gap = model?.gap else { return }
             
-            let vc = NewAnimationOneViewController(model: gap.objecs[4], title: gap.title, isFromRsult: true, delegate: self.delegate)
+            let vc = NewAnimationOneViewController(model: gap.objecs[4], title: gap.titleDeep, isFromRsult: true, delegate: self.delegate)
             
             self.navigationController?.pushViewController(vc, animated: true)
             self.delegate?.scanButtonTapped()

@@ -214,11 +214,13 @@ public struct Gap: Codable {
     let orderIndex: Int
     let title: String
     let titleTwo: String
+    let titleDeep: String
     let objecs: [Objec]
     
     enum CodingKeys: String, CodingKey {
         case titleTwo = "title_two"
         case orderIndex = "order_index"
+        case titleDeep = "title_deep"
         case title, objecs
     }
 }
