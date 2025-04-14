@@ -18,6 +18,7 @@ final class StatsView: UIView {
     private let closeButton = UIButton(type: .system)
     
     private var model: AuthorizationOfferModel?
+    private var isPaid: Bool?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,8 +119,10 @@ final class StatsView: UIView {
         }
     }
     
-    func setup(with model: AuthorizationOfferModel?) {
+    func setup(with model: AuthorizationOfferModel?, isPaid: Bool?) {
         guard let model = model else { return }
+        guard let isPaid = isPaid else { return }
+        self.isPaid = isPaid
         self.model = model
         
         guard let icon = URL(string: model.scn?.stats?.statImg ?? ""),
@@ -134,11 +137,11 @@ final class StatsView: UIView {
         titleLabel.text = model.scn?.stats?.statBtnTitle
         subtitleLabel.text = model.scn?.stats?.statBtnSubtitle
                 
-        textBox1.setup(icon: icon1, title: model.scn?.stats?.statScnTitle1 ?? "", nubmerStr: model.scn?.stats?.statScnSubtitle1 ?? "", withLine: true)
-        textBox2.setup(icon: icon2, title: model.scn?.stats?.statScnText2 ?? "", nubmerStr: model.scn?.stats?.statScnCount2 ?? "", withLine: true)
-        textBox3.setup(icon: icon3, title: model.scn?.stats?.statScnText3 ?? "", nubmerStr: model.scn?.stats?.statScnCount3 ?? "", withLine: true)
-        textBox4.setup(icon: icon4, title: model.scn?.stats?.statScnText4 ?? "", nubmerStr: model.scn?.stats?.statScnCount4 ?? "", withLine: true)
-        textBox5.setup(icon: icon5, title: model.scn?.stats?.statScnText5 ?? "", nubmerStr: model.scn?.stats?.statScnCount5 ?? "", withLine: false)
+        textBox1.setup(icon: icon1, title: model.scn?.stats?.statScnTitle1 ?? "", nubmerStr: isPaid ? (model.scn?.stats?.statScnSubtitle1 ?? "") : "0" , withLine: true)
+        textBox2.setup(icon: icon2, title: model.scn?.stats?.statScnText2 ?? "", nubmerStr: isPaid ? (model.scn?.stats?.statScnCount2 ?? "") : "0" , withLine: true)
+        textBox3.setup(icon: icon3, title: model.scn?.stats?.statScnText3 ?? "", nubmerStr: isPaid ? (model.scn?.stats?.statScnCount3 ?? "") : "0" , withLine: true)
+        textBox4.setup(icon: icon4, title: model.scn?.stats?.statScnText4 ?? "", nubmerStr: isPaid ? (model.scn?.stats?.statScnCount4 ?? "") : "0" , withLine: true)
+        textBox5.setup(icon: icon5, title: model.scn?.stats?.statScnText5 ?? "", nubmerStr: isPaid ? (model.scn?.stats?.statScnCount5 ?? "") : "0" , withLine: false)
         
         closeButton.setTitle(model.scn?.stats?.cls, for: .normal)
     }
