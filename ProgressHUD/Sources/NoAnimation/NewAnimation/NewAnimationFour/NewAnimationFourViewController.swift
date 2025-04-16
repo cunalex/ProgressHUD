@@ -25,8 +25,10 @@ final class NewAnimationFourViewController: UIViewController {
         return view
     }()
     
-    private var alert: CustomAlertViewFour!
+//    private var alert: CustomAlertViewFour!
+    private var alert: CustomAlertView!
     private var model: Objec!
+    private var alertModel: Objec!
     private var myCount = 20
     private var titleText = ""
     private var timer: Timer?
@@ -65,8 +67,9 @@ final class NewAnimationFourViewController: UIViewController {
         self.delegate?.eventsFunc(event: .scan4Hide)
     }
     
-    init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
+    init(model: Objec, alertModel: Objec, title: String, delegate: SpecialAnimationDelegate?) {
         self.model = model
+        self.alertModel = alertModel
         self.titleText = title
         self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
@@ -81,11 +84,17 @@ final class NewAnimationFourViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         progressView = TopProgressView(text: model.prgrsTitle)
-        alert = CustomAlertViewFour(iconName: model.messIcon,
-                                 titleLabelText: model.messTlt,
-                                 descriptionFirstLabelText: model.messTltCmpl ?? "",
-                                 descriptionLowLabelText: model.messSbtlt ?? "",
-                                 goButtonText: model.messBtn, strArray: model.messTltRed ?? [""])
+//        alert = CustomAlertViewFour(iconName: model.messIcon,
+//                                 titleLabelText: model.messTlt,
+//                                 descriptionFirstLabelText: model.messTltCmpl ?? "",
+//                                 descriptionLowLabelText: model.messSbtlt ?? "",
+//                                 goButtonText: model.messBtn, strArray: model.messTltRed ?? [""])
+        alert = CustomAlertView(iconName: alertModel.messIcon,
+                                titleLabelText: alertModel.messTlt,
+                                descriptionFirstLabelText: alertModel.subMessTlt ?? "",
+                                descriptionSecondLabelText: alertModel.subMessTxt ?? "",
+                                descriptionLowLabelText: alertModel.messSbtlt ?? "",
+                                goButtonText: alertModel.messBtn)
         titleLabel.text = titleText
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in

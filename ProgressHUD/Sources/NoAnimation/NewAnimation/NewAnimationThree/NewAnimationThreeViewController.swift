@@ -25,8 +25,10 @@ final class NewAnimationThreeViewController: UIViewController {
         return view
     }()
     
-    private var alert: CustomAlertViewThree!
+//    private var alert: CustomAlertViewThree!
+    private var alert: CustomAlertView!
     private var model: Objec!
+    private var alertModel: Objec!
     private var myCount = 20
     private var titleText = ""
     private var timer: Timer?
@@ -63,8 +65,9 @@ final class NewAnimationThreeViewController: UIViewController {
         self.delegate?.eventsFunc(event: .scan3Hide)
     }
     
-    init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
+    init(model: Objec, alertModel: Objec, title: String, delegate: SpecialAnimationDelegate?) {
         self.model = model
+        self.alertModel = alertModel
         self.titleText = title
         self.myCount = model.strigs?.count ?? 20
         self.delegate = delegate
@@ -79,11 +82,17 @@ final class NewAnimationThreeViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         progressView = TopProgressView(text: model.prgrsTitle)
-        alert = CustomAlertViewThree(iconName: model.messIcon,
-                                 titleLabelText: model.messTlt,
-                                 descriptionFirstLabelText: model.messTltCmpl ?? "",
-                                 descriptionSecondLabelText: model.messSbtlt ?? "",
-                                 goButtonText: model.messBtn)
+//        alert = CustomAlertViewThree(iconName: model.messIcon,
+//                                 titleLabelText: model.messTlt,
+//                                 descriptionFirstLabelText: model.messTltCmpl ?? "",
+//                                 descriptionSecondLabelText: model.messSbtlt ?? "",
+//                                 goButtonText: model.messBtn)
+        alert = CustomAlertView(iconName: alertModel.messIcon,
+                                titleLabelText: alertModel.messTlt,
+                                descriptionFirstLabelText: alertModel.subMessTlt ?? "",
+                                descriptionSecondLabelText: alertModel.subMessTxt ?? "",
+                                descriptionLowLabelText: alertModel.messSbtlt ?? "",
+                                goButtonText: alertModel.messBtn)
         titleLabel.text = titleText
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
