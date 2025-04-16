@@ -167,13 +167,37 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.scanButtonTaped = { [weak self] in
             guard let self, let gap = model?.gap else { return }
             
-            let vc = NewAnimationOneViewController(model: gap.objecs[isPaid ? 4 : 1],
-                                                   title: isPaid ? gap.titleDeep : gap.title,
-                                                   isFromRsult: true,
-                                                   delegate: self.delegate)
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-            self.delegate?.scanButtonTapped()
+            if isPaid {
+                let vc = NewAnimationOneViewController(model: gap.objecs[4],
+                                                       title: gap.titleDeep,
+                                                       isFromRsult: true,
+                                                       delegate: self.delegate)
+                self.navigationController?.pushViewController(vc, animated: true)
+                self.delegate?.scanButtonTapped()
+            } else {
+                switch gap.orderIndex {
+                case 0:
+                    self.delegate?.buttonTapped(isResult: true)
+                    return
+                case 2:
+                    let vc = NewAnimationTwoViewController(model: gap.objecs[1], alertModel: gap.objecs[0], title: gap.title, delegate: self.delegate)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.delegate?.scanButtonTapped()
+                case 3:
+                    let vc = NewAnimationThreeViewController(model: gap.objecs[2], alertModel: gap.objecs[0], title: gap.title, delegate: self.delegate)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.delegate?.scanButtonTapped()
+                case 4:
+                    let vc = NewAnimationFourViewController(model: gap.objecs[3], alertModel: gap.objecs[0], title: gap.titleTwo, delegate: self.delegate)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.delegate?.scanButtonTapped()
+                default:
+                    let vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, isFromRsult: false, delegate: self.delegate)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.delegate?.scanButtonTapped()
+                    
+                }
+            }
         }
     }
     
