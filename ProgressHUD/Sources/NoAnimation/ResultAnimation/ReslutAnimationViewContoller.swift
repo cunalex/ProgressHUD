@@ -16,7 +16,11 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     
     private let resultView = ResultAnimationView.instanceFromNib()
     public var model: AuthorizationOfferModel?
-    public var isPaid: Bool
+    public var isPaid: Bool {
+        didSet {
+            resultView.setup(with: model, isTarifPaidAndActive: isPaid)
+        }
+    }
     
     weak var delegate: SpecialAnimationDelegate?
     
